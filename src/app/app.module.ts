@@ -7,13 +7,15 @@ import { HomeScreenComponent } from "./home-screen/home-screen.component";
 import { HomeLayoutComponent } from "./home-layout/home-layout.component";
 import { LightSwitchServiceService } from "./light-switch-service.service";
 import { HttpClientModule } from "@angular/common/http";
+import { LightComponent } from './light/light.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     HomeScreenComponent,
-    HomeLayoutComponent
+    HomeLayoutComponent,
+    LightComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [LightSwitchServiceService],

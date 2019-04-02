@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { LightSwitchServiceService } from "../light-switch-service.service";
 
 @Component({
   selector: "app-ground-floor",
@@ -7,11 +6,10 @@ import { LightSwitchServiceService } from "../light-switch-service.service";
   styleUrls: ["./ground-floor.component.css"]
 })
 export class GroundFloorComponent implements OnInit {
-  public lightSwitch = "";
-
-  constructor(private _lightswitchservice: LightSwitchServiceService) {}
-
+  //constructor(private _lightswitchservice: LightSwitchServiceService) {}
+  constructor() {}
+  
   ngOnInit() {
-    this._lightswitchservice.lightClick();
+    //this._lightswitchservice.lightClick();
   }
 }
