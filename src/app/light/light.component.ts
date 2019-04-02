@@ -7,11 +7,10 @@ import { LightSwitchServiceService } from "../light-switch-service.service";
   styleUrls: ["./light.component.css"]
 })
 export class LightComponent implements OnInit {
-  public clickLight;
+  public lightswitch: LightSwitchServiceService;
 
-  constructor(public _lightswitchservice: LightSwitchServiceService) {
-    //this.clickLight = this._lightswitchservice;
+  constructor(private _lightswitchservice: LightSwitchServiceService) {
+    this.lightswitch = _lightswitchservice;
   }
-  public test() {}
   ngOnInit() {}
 }
