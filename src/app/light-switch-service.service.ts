@@ -7,11 +7,9 @@ import { HttpClient } from "@angular/common/http";
 export class LightSwitchServiceService {
   constructor(private httpClient: HttpClient) {}
 
-  public clickLight() {
+  public clickLight(token, pin) {
     this.httpClient
-      .get(
-        "http://192.168.1.73:8080/dc19d934914147a5a9219111028ab032/update/V3?value=1"
-      )
+      .get("http://192.168.1.73:8080/" + token + "/update/" + pin + "?value=1")
       .subscribe(res => {
         console.log(res);
       });

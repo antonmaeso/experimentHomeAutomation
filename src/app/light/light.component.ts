@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { LightSwitchServiceService } from "../light-switch-service.service";
 
 @Component({
@@ -7,10 +7,14 @@ import { LightSwitchServiceService } from "../light-switch-service.service";
   styleUrls: ["./light.component.css"]
 })
 export class LightComponent implements OnInit {
-  public lightswitch: LightSwitchServiceService;
+  @Input() public token;
+  @Input() public pin;
 
-  constructor(private _lightswitchservice: LightSwitchServiceService) {
-    this.lightswitch = _lightswitchservice;
+  constructor(private _lightswitchservice: LightSwitchServiceService) {}
+
+  public clickLight() {
+    this._lightswitchservice.clickLight(this.token, this.pin);
   }
+
   ngOnInit() {}
 }
